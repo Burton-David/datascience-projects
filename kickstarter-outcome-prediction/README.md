@@ -1,36 +1,51 @@
-# Kickstarter Campaign Outcome Prediction
+# Kickstarter Campaign Prediction (2019)
 
-Predicting the success or failure of Kickstarter campaigns using historical project data.
+Predicting campaign success/failure using 331,675 Kickstarter campaigns from 2009-2018. My first experience working with messy real-world data at scale.
 
-## Overview
-This project analyzes over 300,000 Kickstarter campaigns to predict whether a campaign will succeed or fail based on various features including category, goal amount, launch timing, and campaign duration.
+## What I Built
 
-## Dataset
-Kickstarter Projects dataset from Kaggle containing campaign data from 2009-2018.
+Tried to predict whether a Kickstarter would succeed or fail based on:
+- Goal amount (converted to USD)
+- Category/subcategory (Film, Music, Games, etc.)
+- Launch timing (day of week, hour, week of year)
+- Campaign duration
+- Geographic location
+- Number of backers
 
-Source: https://www.kaggle.com/kemical/kickstarter-projects
+## The Data Cleaning Journey
+
+This dataset was rough. Multiple currency formats, inconsistent datetime fields, missing values scattered throughout. Spent most of my time in `data-cleaning.ipynb` just getting it into usable shape:
+
+- Dropped campaigns with status "live", "canceled", "suspended" (kept only success/fail)
+- Converted all currencies to USD using two different rate sources (reconciled conflicts)
+- Extracted datetime features: day of week, week of year, hour of launch, campaign duration
+- Combined duplicate columns (had both `usd pledged` and `usd_pledged_real`)
 
 ## Project Structure
-The analysis is broken into multiple notebooks:
 
-- `choosing-data-set.ipynb` - Initial dataset selection and evaluation
-- `data-cleaning.ipynb` - Data preprocessing, feature engineering, and handling missing values
-- `initial-data-exploration.ipynb` - Exploratory data analysis
-- `more-exploration.ipynb` - Additional feature analysis
-- `machine-learning-models.ipnyb` - Model training and evaluation
+Analysis split across multiple notebooks (this was before I learned to organize better):
+- `choosing-data-set.ipynb` - Dataset evaluation
+- `data-cleaning.ipynb` - **Most important one** - all the preprocessing
+- `initial-data-exploration.ipynb` - Basic EDA
+- `more-exploration.ipynb` - Deeper category/timing analysis
+- `machine-learning-models.ipnyb` - Classification models (note: typo in filename)
 
-## Key Features
-- Campaign goal and pledged amounts (USD)
-- Project category and subcategory
-- Campaign duration
-- Launch timing (day of week, hour, week of year)
-- Geographic location
+## What I Learned
 
-## Approach
-1. Data cleaning and preprocessing
-2. Feature engineering from datetime fields
-3. Exploratory data analysis to identify patterns
-4. Classification modeling to predict campaign outcomes
+**Good:**
+- Got comfortable with pandas datetime operations
+- Learned to handle multiple currencies and coordinate system conversions
+- Working with categorical data at scale
 
-## Requirements
-See root requirements.txt for dependencies.
+**What I'd Improve:**
+- Notebooks are disorganized (should be 1-2 files max)
+- No clear final model or results documented
+- Didn't properly validate findings on holdout set
+- Could have used campaign text/descriptions (NLP) but didn't
+- No analysis of whether timing actually matters or just correlates with category
+
+## Dataset Source
+
+Kaggle: [Kickstarter Projects](https://www.kaggle.com/kemical/kickstarter-projects)
+
+Note: Dataset not included. Download separately and update paths in notebooks.

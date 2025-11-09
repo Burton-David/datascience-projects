@@ -1,3 +1,15 @@
+# Original 2019 environment used Python 3.6-3.7 with:
+# numpy ~1.16
+# pandas ~0.24
+# scikit-learn ~0.21
+# matplotlib ~3.0
+# seaborn ~0.9
+# xgboost ~0.90
+
+# These notebooks have not been tested with current library versions.
+# They may work with modern versions but expect deprecation warnings.
+# Listed below are approximate modern equivalents if you want to try running them:
+
 numpy>=1.24.0
 pandas>=2.0.0
 matplotlib>=3.7.0

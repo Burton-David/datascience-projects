@@ -1,19 +1,33 @@
-# Real Estate Price Prediction
+# Housing Price Prediction (2019)
 
-Linear regression analysis for predicting housing prices.
+My first linear regression project. Predicting house prices based on property features.
 
-## Overview
-This project applies linear regression techniques to predict real estate prices based on property characteristics. The analysis demonstrates fundamental statistical modeling and feature engineering concepts.
+## What This Was
+
+Classic regression exercise using housing data. Focused on:
+- Understanding linear assumptions (linearity, homoscedasticity, normality)
+- Feature selection and multicollinearity
+- Interpreting coefficients
+- Residual analysis
+
+This was more about learning the fundamentals of regression than building a production model.
+
+## Files
+
+`predict-housing-price-using-linear-regression/housing-price-prediction.ipynb`
+
+(Yes, the folder name is verbose. Bootcamp project structure.)
+
+## Honest Assessment
+
+This was my introduction to regression. The notebook is pretty basic by current standards but it helped me understand:
+- How to check regression assumptions
+- Why R² isn't everything
+- How to interpret p-values and coefficients
+- The importance of train/test splits
+
+Would I put this on a resume? No. But it's part of the learning progression.
 
 ## Dataset
-Housing price dataset with property features and sale prices.
 
-## Approach
-1. Data exploration and visualization
-2. Feature selection and engineering
-3. Linear regression modeling
-4. Model evaluation and interpretation
-5. Residual analysis
-
-## Requirements
-See root requirements.txt for dependencies.
+Not included in repo. Need to download separately if running the notebook.
